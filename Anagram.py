@@ -35,3 +35,4 @@ def anagram_solution(s1, s2):
     return still_ok
 
 print(anagram_solution("earth", "heart"))
+print(anagram_solution("python", "typhon"))
