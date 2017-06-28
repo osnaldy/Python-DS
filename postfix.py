@@ -38,4 +38,15 @@ def infix_to_postfix(infix_exp):
 
         else:
 
-            while (not op_stack.is_empty())
+            while (not op_stack.is_empty()) and (precedence[op_stack.peek()] >= precedence[token]):
+
+                postfix_list.append(op_stack.pop())
+            op_stack.push(token)
+
+    while not op_stack.is_empty():
+
+        postfix_list.append(op_stack.pop())
+
+    return ' '.join(postfix_list)
+
+print(infix_to_postfix(" ( A * B ) + ( C + D ) "))
