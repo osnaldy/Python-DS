@@ -30,7 +30,11 @@ def postfix_eval(postfix_exp):
 
 def do_math(op, op1, op2):
 
-    if op == '*':
+    if op == '^':
+
+        return op1 ** op2
+
+    elif op == '*':
 
         return op1 * op2
 
@@ -47,3 +51,6 @@ def do_math(op, op1, op2):
         return op1 - op2
 
 print(postfix_eval(' 7 8 + 3 2 + / '))
+print(postfix_eval('5 3 4 2 - ^ *'))
+
+
