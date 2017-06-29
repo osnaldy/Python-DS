@@ -5,6 +5,7 @@ def infix_to_postfix(infix_exp):
 
     precedence = {}
 
+    precedence['^'] = 4
     precedence['*'] = 3
     precedence['/'] = 3
     precedence['+'] = 2
@@ -50,3 +51,4 @@ def infix_to_postfix(infix_exp):
     return ' '.join(postfix_list)
 
 print(infix_to_postfix(" ( B * B ) + ( C + D ) "))
+print(infix_to_postfix("5 * 3 ^ ( 4 - 2 )"))
