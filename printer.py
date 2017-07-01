@@ -1,5 +1,6 @@
 class Printer:
 
+    # pass in the pages per minute as a parameter
     def __init__(self, ppm):
 
         self.page_rate = ppm
@@ -8,7 +9,7 @@ class Printer:
 
     def tick(self):
 
-        if self.current_task is not None:
+        if self.current_task != None:
 
             self.time_remaining = self.time_remaining - 1
 
@@ -18,7 +19,7 @@ class Printer:
 
     def busy(self):
 
-        if self.current_task is not None:
+        if self.current_task != None:
 
             return True
 
@@ -30,4 +31,3 @@ class Printer:
 
         self.current_task = new_task
         self.time_remaining = new_task.get_pages() * 60 / self.page_rate
-
