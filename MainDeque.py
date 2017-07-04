@@ -26,3 +26,7 @@ class Deque:
     def size(self):
 
         return len(self.items)
+
+    def __repr__(self):
+
+        return repr(self.items)
