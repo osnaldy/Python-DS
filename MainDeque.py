@@ -15,3 +15,14 @@ class Deque:
 
         self.items.insert(0, item)
 
+    def remove_front(self):
+
+        return self.items.pop()
+
+    def remove_rear(self):
+
+        return self.items.pop(0)
+
+    def size(self):
+
+        return len(self.items)
