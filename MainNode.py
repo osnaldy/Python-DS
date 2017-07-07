@@ -20,13 +20,3 @@ class Node:
     def set_next(self, new_next):
 
         self.next = new_next
-
-
-temp = Node(93)
-print(temp.get_data())
-temp.set_data(26)
-temp.set_next(25)
-print(temp.get_data())
-print(temp.get_next())
-
-
