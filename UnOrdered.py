@@ -33,3 +33,23 @@ class UnOrderedList:
             current = current.get_next()
         # returns the numbers of Nodes found in the list
         return count
+
+    def search(self, item):
+
+        current = self.head
+
+        # since the item is not found at the start of the Traversal, found is set to false
+        found = False
+
+        # Keep looping while there are still items left in the list and and the item has not been found
+        while current is not None and not found:
+
+            if current.get_data() == item:
+
+                found = True
+
+            else:
+
+                found = False
+
+        return found
