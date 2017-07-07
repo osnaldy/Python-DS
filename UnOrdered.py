@@ -50,6 +50,6 @@ class UnOrderedList:
 
             else:
 
-                found = False
+                current = current.get_next()
 
         return found
