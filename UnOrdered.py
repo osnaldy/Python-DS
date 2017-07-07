@@ -26,7 +26,7 @@ class UnOrderedList:
         count = 0
 
         # Compares the reference to None and increases the count as long as it is not equal to Noe
-        while current != Node:
+        while current is not None:
 
             count += 1
         # Moves to to next Node item in the list
