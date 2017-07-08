@@ -60,9 +60,24 @@ class UnOrderedList:
 
         while node is not None:
 
-            print(node.data)
+            print(node.data, end=' ')
 
             node = node.next
+
+    def reverse_list(self):
+
+        prev = None
+        current = self.head
+
+        while current is not None:
+
+            nextNode = current.next
+            current.next = prev
+            prev = current
+            current = nextNode
+
+        self.head = prev
+        self.print_list()
 
 myList = UnOrderedList()
 
@@ -75,3 +90,9 @@ myList.add(10)
 print(myList.search(60))
 
 myList.print_list()
+print(' \nReversed version of Linked List')
+myList.reverse_list()
+
+
+
+
