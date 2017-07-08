@@ -53,3 +53,25 @@ class UnOrderedList:
                 current = current.get_next()
 
         return found
+
+    def print_list(self):
+
+        node = self.head
+
+        while node is not None:
+
+            print(node.data)
+
+            node = node.next
+
+myList = UnOrderedList()
+
+myList.add(17)
+myList.add(56)
+myList.add(23)
+myList.add(60)
+myList.add(10)
+
+print(myList.search(60))
+
+myList.print_list()
