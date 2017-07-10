@@ -75,9 +75,28 @@ class UnOrderedList:
             current.next = prev
             prev = current
             current = nextNode
-
         self.head = prev
         self.print_list()
+
+    def insert_after(self, index, item):
+
+        # insert a new Node after a given index
+        current = self.head
+
+        for i in range(index):
+
+            current = current.get_next()
+
+        if current is not None:
+
+            new_node = Node(item)
+            new_node.set_next(current.get_next())
+            current.set_next(new_node)
+
+        else:
+
+            raise("Index is out of range")
+
 
 myList = UnOrderedList()
 
@@ -86,11 +105,13 @@ myList.add(56)
 myList.add(23)
 myList.add(60)
 myList.add(10)
+myList.insert_after(1, 55)
 
 print(myList.search(60))
 
 myList.print_list()
 print(' \nReversed version of Linked List')
+print()
 myList.reverse_list()
 
 
