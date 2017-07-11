@@ -11,6 +11,7 @@ class UnOrderedList:
 
         return self.head is None
 
+    # ---------------- Function to add a new Node ----------------------
     def add(self, item):
         # Creates a new Node and places the item as its data
         temp = Node(item)
@@ -20,6 +21,7 @@ class UnOrderedList:
         # Then the head of the list is modify in order to refer to the new Node
         self.head = temp
 
+    # ---------------- Function to return the size of the linked list ----------------------
     def size(self):
 
         current = self.head
@@ -27,50 +29,42 @@ class UnOrderedList:
 
         # Compares the reference to None and increases the count as long as it is not equal to None
         while current is not None:
-
             count += 1
         # Moves to to next Node item in the list
             current = current.get_next()
         # returns the numbers of Nodes found in the list
         return count
 
+    # ---------------- Function to search for a Node ----------------------
     def search(self, item):
 
         current = self.head
-
         # since the item is not found at the start of the Traversal, found is set to false
         found = False
-
         # Keep looping while there are still items left in the list and and the item has not been found
         while current is not None and not found:
-
             if current.get_data() == item:
-
                 found = True
-
             else:
-
                 current = current.get_next()
-
         return found
 
+    # ---------------- Function to print a Nodes inside the linked list ----------------------
     def print_list(self):
 
         node = self.head
 
         while node is not None:
-
             print(node.data, end=' ')
-
             node = node.next
 
+    # ---------------- Function to reverse an print linked list ----------------------
     def reverse_list(self):
 
         prev = None
         current = self.head
 
         while current is not None:
-
             nextNode = current.next
             current.next = prev
             prev = current
@@ -78,25 +72,43 @@ class UnOrderedList:
         self.head = prev
         self.print_list()
 
+    # ---------------- Function to insert a new Node at any given index ----------------------
     def insert_after(self, index, item):
 
         # insert a new Node after a given index
         current = self.head
 
         for i in range(index):
-
             current = current.get_next()
 
         if current is not None:
-
             new_node = Node(item)
             new_node.set_next(current.get_next())
             current.set_next(new_node)
-
         else:
-
             raise("Index is out of range")
 
+    # ---------------- Function to remove a Node ----------------------
+    def remove(self, item):
+
+        current = self.head
+        prev = None
+        found = False
+
+        while not found:
+
+            if current.get_data() == item:
+                found = True
+                # if item is not found, we prev and current must move one node ahead
+            else:
+                prev = current
+                current = current.get_next()
+
+        if prev is None:
+            self.head = current.get_next()
+        else:
+            prev.set_next(current.get_next())
+        print('\nModified list')
 
 myList = UnOrderedList()
 
@@ -107,13 +119,12 @@ myList.add(60)
 myList.add(10)
 myList.insert_after(1, 55)
 
-print(myList.search(60))
 
+print(myList.search(20))
+print(myList.search(55))
+myList.print_list()
+
+myList.remove(17)
 myList.print_list()
 print(' \nReversed version of Linked List')
-print()
 myList.reverse_list()
-
-
-
-
