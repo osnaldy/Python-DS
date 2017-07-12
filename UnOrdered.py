@@ -143,6 +143,15 @@ class UnOrderedList:
         prev.next = None
         return current
 
+    # ---------------- Function to delete first Node ----------------------
+
+    def delete_first(self):
+
+        current = self.head
+        self.head = self.head.next
+        current.set_next(None)
+
+
 myList = UnOrderedList()
 
 myList.add(17)
@@ -153,7 +162,6 @@ myList.add(10)
 myList.insert_after(1, 55)
 myList.print_list()
 
-
 print(myList.search(20))
 print(myList.search(55))
 myList.append(100)
@@ -161,6 +169,7 @@ myList.print_list()
 
 myList.remove(10)
 myList.pop()
+myList.delete_first()
 myList.print_list()
 print(' \nReversed version of Linked List')
 myList.reverse_list()
