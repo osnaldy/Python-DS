@@ -112,10 +112,14 @@ class UnOrderedList:
 
     def append(self, item):
 
-        # create a pointer to the head
-        current = self.head
         # create a new node including item data
         new_node = Node(item)
+        # verify if the list is empty, it will assign new node as the head of the list
+        if self.head is None:
+            return new_node
+        # create a pointer to the head
+        current = self.head
+
         # create a loop to verify when the next reference of current become None
         while None is not current.get_next():
             # move forward one position until null is found
