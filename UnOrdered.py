@@ -110,6 +110,7 @@ class UnOrderedList:
             prev.set_next(current.get_next())
         print('\nModified list')
 
+    # ---------------- Function to append a Node ----------------------
     def append(self, item):
 
         # create a new node including item data
@@ -127,6 +128,21 @@ class UnOrderedList:
         # assign the new node to the next reference of current which was None
         current.next = new_node
 
+    # ---------------- Function to pop a Node ----------------------
+
+    def pop(self):
+
+        current = self.head
+        prev = None
+
+        while current.get_next() is not None:
+
+            prev = current
+            current = current.get_next()
+
+        prev.next = None
+        return current
+
 myList = UnOrderedList()
 
 myList.add(17)
@@ -135,6 +151,7 @@ myList.add(23)
 myList.add(60)
 myList.add(10)
 myList.insert_after(1, 55)
+myList.print_list()
 
 
 print(myList.search(20))
@@ -143,6 +160,7 @@ myList.append(100)
 myList.print_list()
 
 myList.remove(10)
+myList.pop()
 myList.print_list()
 print(' \nReversed version of Linked List')
 myList.reverse_list()
