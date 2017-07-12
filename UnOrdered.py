@@ -99,7 +99,7 @@ class UnOrderedList:
 
             if current.get_data() == item:
                 found = True
-                # if item is not found, we prev and current must move one node ahead
+                # if item is not found, prev and current must move one node ahead
             else:
                 prev = current
                 current = current.get_next()
@@ -109,6 +109,19 @@ class UnOrderedList:
         else:
             prev.set_next(current.get_next())
         print('\nModified list')
+
+    def append(self, item):
+
+        # create a pointer to the head
+        current = self.head
+        # create a new node including item data
+        new_node = Node(item)
+        # create a loop to verify when the next reference of current become None
+        while None is not current.get_next():
+            # move forward one position until null is found
+            current = current.get_next()
+        # assign the new node to the next reference of current which was None
+        current.next = new_node
 
 myList = UnOrderedList()
 
@@ -122,9 +135,10 @@ myList.insert_after(1, 55)
 
 print(myList.search(20))
 print(myList.search(55))
+myList.append(100)
 myList.print_list()
 
-myList.remove(17)
+myList.remove(10)
 myList.print_list()
 print(' \nReversed version of Linked List')
 myList.reverse_list()
