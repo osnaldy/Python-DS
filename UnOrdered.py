@@ -151,6 +151,24 @@ class UnOrderedList:
         self.head = self.head.next
         current.set_next(None)
 
+    # ---------------- Function to return the index of a Node ----------------------
+
+    def return_index(self, item):
+
+        current = self.head
+        count = 0
+
+        found = False
+
+        while not found:
+            if current.get_data() == item:
+                count += 1
+                found = True
+            else:
+                count += 1
+                current = current.get_next()
+        return count
+
 
 myList = UnOrderedList()
 
@@ -161,15 +179,19 @@ myList.add(60)
 myList.add(10)
 myList.insert_after(1, 55)
 myList.print_list()
-
-print(myList.search(20))
-print(myList.search(55))
-myList.append(100)
-myList.print_list()
-
-myList.remove(10)
-myList.pop()
-myList.delete_first()
-myList.print_list()
-print(' \nReversed version of Linked List')
-myList.reverse_list()
+print()
+print(myList.return_index(10))
+# print(myList.search(20))
+# print(myList.search(55))
+# myList.append(100)
+# myList.print_list()
+# print()
+# print(myList.return_index(55))
+# print()
+# print()
+# myList.remove(10)
+# myList.pop()
+# myList.delete_first()
+# myList.print_list()
+# print(' \nReversed version of Linked List')
+# myList.reverse_list()
