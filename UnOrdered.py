@@ -173,29 +173,30 @@ class UnOrderedList:
 
     def pop_pos(self, pos):
 
-        prev = self.head
+        size = self.size()
 
-        for i in range(1, pos - 1):
+        if pos > size or pos < 1:
+            print("Invalid position given -->", pos)
+            return self.head.data
 
-            prev = prev.get_next()
+        if pos == 1:
+            temp = self.head
+            self.head = self.head.next
+            temp.next = None
+            return temp.data
 
-        current = prev.next
-        prev.next = current.next
-        current.next = None
+        else:
 
-        return current.get_data()
+            prev = self.head
 
-        # count = 1
-        #
-        # while count < pos - 1:
-        #
-        #     prev = prev.get_next()
-        #     count += 1
-        #
-        # current = prev.get_next()
-        # prev.next = current.next
-        # current.next = None
-        # return current.get_data()
+            for i in range(1, pos - 1):
+
+                prev = prev.get_next()
+
+            current = prev.next
+            prev.next = current.next
+            current.next = None
+            return current.data
 
 myList = UnOrderedList()
 
@@ -207,10 +208,10 @@ myList.add(10)
 #myList.insert_after(1, 55)
 myList.print_list()
 print()
-print(myList.pop_pos(3))
+print(myList.pop_pos(5))
 myList.print_list()
 # print(myList.search(20))
-# print(myList.search(55))
+# print(myList.search(55)
 # myList.append(100)
 # myList.print_list()
 # print()
