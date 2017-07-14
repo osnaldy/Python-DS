@@ -186,11 +186,9 @@ class UnOrderedList:
             return temp.data
 
         else:
-
             prev = self.head
 
             for i in range(1, pos - 1):
-
                 prev = prev.get_next()
 
             current = prev.next
