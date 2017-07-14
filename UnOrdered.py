@@ -169,18 +169,46 @@ class UnOrderedList:
                 current = current.get_next()
         return count
 
+# ---------------- Function to remove Node at a given position ----------------------
+
+    def pop_pos(self, pos):
+
+        prev = self.head
+
+        for i in range(1, pos - 1):
+
+            prev = prev.get_next()
+
+        current = prev.next
+        prev.next = current.next
+        current.next = None
+
+        return current.get_data()
+
+        # count = 1
+        #
+        # while count < pos - 1:
+        #
+        #     prev = prev.get_next()
+        #     count += 1
+        #
+        # current = prev.get_next()
+        # prev.next = current.next
+        # current.next = None
+        # return current.get_data()
 
 myList = UnOrderedList()
 
-myList.add(17)
-myList.add(56)
-myList.add(23)
-myList.add(60)
+myList.add(11)
+myList.add(15)
+myList.add(8)
 myList.add(10)
-myList.insert_after(1, 55)
+#myList.add(10)
+#myList.insert_after(1, 55)
 myList.print_list()
 print()
-print(myList.return_index(10))
+print(myList.pop_pos(3))
+myList.print_list()
 # print(myList.search(20))
 # print(myList.search(55))
 # myList.append(100)
