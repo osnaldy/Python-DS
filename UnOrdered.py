@@ -97,6 +97,9 @@ class UnOrderedList:
 
         while not found:
 
+            if current.data != item:
+                return "item not found"
+
             if current.get_data() == item:
                 found = True
                 # if item is not found, prev and current must move one node ahead
@@ -108,7 +111,8 @@ class UnOrderedList:
             self.head = current.get_next()
         else:
             prev.set_next(current.get_next())
-        print('\nModified list')
+
+        return current.data
 
     # ---------------- Function to append a Node ----------------------
     def append(self, item):
@@ -206,9 +210,9 @@ myList.add(10)
 #myList.insert_after(1, 55)
 myList.print_list()
 print()
-print(myList.pop_pos(5))
-myList.print_list()
-# print(myList.search(20))
+#print(myList.pop_pos(5))
+#myList.print_list()
+#print(myList.search(8))
 # print(myList.search(55)
 # myList.append(100)
 # myList.print_list()
@@ -216,7 +220,8 @@ myList.print_list()
 # print(myList.return_index(55))
 # print()
 # print()
-# myList.remove(10)
+print(myList.remove(1))
+myList.print_list()
 # myList.pop()
 # myList.delete_first()
 # myList.print_list()
