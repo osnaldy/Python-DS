@@ -48,3 +48,21 @@ class OrderedList:
             prev.set_next(current.get_next())
 
         return current.get_data()
+
+    def search(self, item):
+
+        current = self.head
+        stop = False
+        found = False
+
+        while current is not None and not found and not stop:
+
+            if current.get_data() == item:
+                found = True
+            else:
+                if current.get_data() > item:
+                    stop = True
+                else:
+                    current = current.next
+
+        return found
