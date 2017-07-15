@@ -33,6 +33,9 @@ class OrderedList:
 
         while not found:
 
+            if current.get_data() != item:
+                return str(item) + " Not found"
+
             if current.get_data() == item:
                 found = True
             else:
