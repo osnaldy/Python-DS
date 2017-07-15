@@ -7,9 +7,14 @@ class OrderedList:
 
         self.head = None
 
+    def is_empty(self):
+
+        return self.head is None
+
     def size(self):
 
-        if self.head is None:
+        size = self.is_empty()
+        if size is None:
             return
 
         current = self.head
