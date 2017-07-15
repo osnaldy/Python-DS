@@ -24,3 +24,24 @@ class OrderedList:
             count += 1
             current = current.next
         return count
+
+    def remove(self, item):
+
+        current = self.head
+        prev = None
+        found = False
+
+        while not found:
+
+            if current.get_data() == item:
+                found = True
+            else:
+                prev = current
+                current = current.next
+
+        if prev is None:
+            self.head = current.next
+        else:
+            prev.set_next(current.get_next())
+
+        return current.get_data()
