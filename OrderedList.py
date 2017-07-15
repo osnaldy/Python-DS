@@ -1,5 +1,6 @@
 from MainNode import Node
 
+
 class OrderedList:
 
     def __init__(self):
@@ -7,6 +8,9 @@ class OrderedList:
         self.head = None
 
     def size(self):
+
+        if self.head is None:
+            return
 
         current = self.head
         count = 0
