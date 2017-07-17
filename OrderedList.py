@@ -66,3 +66,33 @@ class OrderedList:
                     current = current.next
 
         return found
+
+    def add(self, item):
+
+        current = self.head
+        prev = None
+        stop = False
+
+        while current is not None and not stop:
+
+            if current.get_data() > item:
+                stop = True
+
+            else:
+                prev = current
+                current = current.get_next()
+
+        temp = Node(item)
+
+        if prev is None:
+            temp.set_next(self.head)
+            self.head = temp
+        else:
+            temp.set_next(current)
+            prev.set_next(temp)
+
+myList = OrderedList()
+myList.add(10)
+myList.add(77)
+myList.add(1)
+myList.add(5)
