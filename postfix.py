@@ -50,9 +50,6 @@ def infix_to_postfix(infix_exp):
 
     return ' '.join(postfix_list)
 
-print(infix_to_postfix(" ( B * B ) + ( C + D ) "))
-print(infix_to_postfix("5 * 3 ^ ( 4 - 2 )"))
-
 
 def balance_check(symbol_string):
 
@@ -79,3 +76,31 @@ def balance_check(symbol_string):
         return True
     else:
         return False
+
+
+def validate_infix_expression(expr):
+
+    if not expr:
+        return False
+
+    expressions = []
+
+    for i in range(len(expr)):
+        if expr[i] == '(' or expr[i] == ')':
+            expressions.append(expr[i])
+    if not balance_check(expressions):
+        return False
+    else:
+        return True
+expression = " ( B * B ) + ( C + D ) "
+token = validate_infix_expression(expression)
+
+if token is True:
+
+    print(infix_to_postfix(expression))
+
+else:
+
+    print("Incorrect input")
+
+print(infix_to_postfix("5 * 3 ^ ( 4 - 2 )"))
