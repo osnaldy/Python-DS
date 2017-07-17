@@ -52,3 +52,30 @@ def infix_to_postfix(infix_exp):
 
 print(infix_to_postfix(" ( B * B ) + ( C + D ) "))
 print(infix_to_postfix("5 * 3 ^ ( 4 - 2 )"))
+
+
+def balance_check(symbol_string):
+
+    s = Stack()
+
+    for i in range(len(symbol_string)):
+
+        symbol = symbol_string[i]
+
+        if symbol == '(':
+
+            s.push(symbol)
+
+        else:
+
+            if s.is_empty():
+                return False
+
+            else:
+                s.pop()
+        i += 1
+
+    if s.is_empty():
+        return True
+    else:
+        return False
