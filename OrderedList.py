@@ -91,8 +91,19 @@ class OrderedList:
             temp.set_next(current)
             prev.set_next(temp)
 
+    def print_list(self):
+
+        current = self.head
+
+        while current is not None:
+
+            print (current.get_data(), "-->", end=' ')
+            current = current.get_next()
+
 myList = OrderedList()
-myList.add(10)
+myList.add(23)
 myList.add(77)
-myList.add(1)
+myList.add(44)
 myList.add(5)
+
+print(myList.print_list())
