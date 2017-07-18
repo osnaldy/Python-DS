@@ -1,3 +1,5 @@
+from Stack import Stack
+
 # -----------Created a function to add recursively -----------------
 def list_sum(num_list):
 
@@ -63,3 +65,29 @@ def check_factorial(n):
         return n * check_factorial(n-1)
 
 print(check_factorial(3))
+
+
+# -----------Created a function to convert to string in any base using stacks -----------------
+def frame_stack(n, base):
+
+    r_stack = Stack()
+
+    convert_string = '0123456789ABCDEF'
+
+    while n > 0:
+
+        if n < base:
+            r_stack.push(convert_string[n])
+
+        else:
+            r_stack.push(convert_string[n % base])
+        n //= base
+
+    result = ""
+    while not r_stack.is_empty():
+
+        result = result + str(r_stack.pop())
+
+    return result
+
+print(frame_stack(10, 2))
