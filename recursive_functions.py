@@ -33,6 +33,7 @@ def reverse_string(string):
 print(reverse_string('Hello World'))
 
 
+# -----------Created a function to check if word is palindrome recursively -----------------
 def check_palindrome(string):
     # remove all the white spaces and punctuation from string
     new_string = ''.join(n.lower() for n in string if n.isalnum())
@@ -51,3 +52,14 @@ print(check_palindrome('Reviled did I live, said I, as evil I did deliver'))
 print(check_palindrome('Able was I ere I saw Elba'))
 print(check_palindrome('Kanakanak – a town in Alaska'))
 print(check_palindrome('Wassamassaw – a town in South Dakota'))
+
+
+# -----------Created a function to compute the factorial of a number -----------------
+def check_factorial(n):
+
+    if n <= 1:
+        return n
+    else:
+        return n * check_factorial(n-1)
+
+print(check_factorial(3))
