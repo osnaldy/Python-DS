@@ -31,3 +31,23 @@ def reverse_string(string):
         return reverse_string(string[1:]) + string[0]
 
 print(reverse_string('Hello World'))
+
+
+def check_palindrome(string):
+    # remove all the white spaces and punctuation from string
+    new_string = ''.join(n.lower() for n in string if n.isalnum())
+
+    if len(new_string) <= 1:
+        return True
+    else:
+        if new_string[0] != new_string[-1]:
+            return False
+        else:
+            return check_palindrome(new_string[1: -1])
+
+print(check_palindrome('kayak'))
+print(check_palindrome('aibohphobia'))
+print(check_palindrome('Reviled did I live, said I, as evil I did deliver'))
+print(check_palindrome('Able was I ere I saw Elba'))
+print(check_palindrome('Kanakanak – a town in Alaska'))
+print(check_palindrome('Wassamassaw – a town in South Dakota'))
