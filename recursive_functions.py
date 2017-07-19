@@ -68,9 +68,10 @@ print(check_factorial(3))
 
 
 # -----------Created a function to convert to string in any base using stacks -----------------
-def frame_stack(n, base):
+r_stack = Stack()
 
-    r_stack = Stack()
+
+def frame_stack(n, base):
 
     convert_string = '0123456789ABCDEF'
 
