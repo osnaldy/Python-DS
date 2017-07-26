@@ -7,11 +7,12 @@ def sequential_search(list_items, item):
 
         if list_items[pos] == item:
             found = True
-            print(list_items[pos], item)
+            print(list_items[pos], item, found)
         else:
+            print(str(list_items[pos]) + " does not equal " + str(item))
             pos += 1
     return found
 
 list1 = [1, 2, 4, 5, 6, 7, 8]
 
-print(sequential_search(list1, 4))
+print(sequential_search(list1, 9))
