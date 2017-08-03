@@ -5,3 +5,6 @@ def capitalize(string):
 
 word = input("Enter the sentence")
 print(capitalize(word))
+
+word = input("Enter the sentence")
+print(capitalize(word))
