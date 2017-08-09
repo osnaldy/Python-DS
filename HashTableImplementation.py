@@ -11,7 +11,6 @@ class HashTable:
         hash_value = self.hash_function(key, len(self.slots))
 
         if self.slots[hash_value] is None:
-
             self.slots[hash_value] = key
             self.data[hash_value] = data
 
@@ -37,3 +36,32 @@ class HashTable:
     def rehash(self, old_hash, size):
 
         return (old_hash + 1) % size
+
+    def get(self, key):
+
+        start_slot = self.hash_function(key, len(self.slots))
+
+        data = None
+        stop = False
+        found = False
+        position = start_slot
+
+        while self.slots[position] is not None and not found and not stop:
+
+            if self.slots[position] == key:
+                found = True
+                data = self.data[position]
+            else:
+                position = self.rehash(position, len(self.slots))
+                if position == start_slot:
+                    stop = True
+
+        return data
+
+    def __getitem__(self, key):
+
+        return self.get(key)
+
+    def __setitem__(self, key, value):
+
+        self.put(key, value)
