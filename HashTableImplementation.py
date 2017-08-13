@@ -88,6 +88,15 @@ class HashTable:
                     stop = True
                     print("Key #", key, "was not found in the slots")
 
+    def exists(self, key):
+
+        key_value = self.hash_function(key, len(self.slots))
+
+        if self.slots[key_value] == key:
+            return True
+        else:
+            return False
+
     def __len__(self):
 
         return len([x for x in self.slots if x])
@@ -104,21 +113,15 @@ class HashTable:
 
         return self.delete(key)
 
-
 h = HashTable()
 
-h[54]="cat"
-h[26]="dog"
-h[93]="lion"
-h[17]="tiger"
-h[77]="bird"
-h[31]="cow"
-h[44]="goat"
-h[55]="pig"
-h[20]="chicken"
-h[22]="Pollo"
-print(h.slots)
-
-h.delete(42)
-print(h.slots)
-
+h[54] = "cat"
+h[26] = "dog"
+h[93] = "lion"
+h[17] = "tiger"
+h[77] = "bird"
+h[31] = "cow"
+h[44] = "goat"
+h[55] = "pig"
+h[20] = "chicken"
+h[22] = "cow"
