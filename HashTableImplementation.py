@@ -70,8 +70,9 @@ class HashTable:
 
         delete_value = self.hash_function(key, len(self.slots))
         found = False
+        stop = False
 
-        while self.slots[delete_value] != key and not found:
+        while self.slots[delete_value] != key and not found and not stop:
 
             if self.slots[delete_value] == key:
                 del self.slots[delete_value]
@@ -83,6 +84,9 @@ class HashTable:
                     del self.slots[delete_value]
                     del self.data[delete_value]
                     found = True
+                else:
+                    stop = True
+                    print("Key #", key, "was not found in the slots")
 
     def __len__(self):
 
@@ -115,6 +119,6 @@ h[20]="chicken"
 h[22]="Pollo"
 print(h.slots)
 
-h.delete(44)
+h.delete(42)
 print(h.slots)
 
