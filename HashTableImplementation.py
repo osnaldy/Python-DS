@@ -90,9 +90,7 @@ class HashTable:
 
     def exists(self, key):
 
-        key_value = self.hash_function(key, len(self.slots))
-
-        if self.slots[key_value] == key:
+        if key in self.slots:
             return True
         else:
             return False
@@ -113,6 +111,10 @@ class HashTable:
 
         return self.delete(key)
 
+    def __contains__(self, item):
+
+        return self.exists(item)
+
 h = HashTable()
 
 h[54] = "cat"
@@ -125,3 +127,5 @@ h[44] = "goat"
 h[55] = "pig"
 h[20] = "chicken"
 h[22] = "cow"
+
+print(h.exists(44))
