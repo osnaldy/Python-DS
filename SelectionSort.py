@@ -1,18 +1,19 @@
-def selection_sort_algorithm(a_list):
+def selection_sort(a_list):
 
-    for i in range(len(a_list) - 1, 0, - 1):
+    for fill_slot in range(len(a_list) - 1, 0, - 1):
 
-        pos_of_max = 0
+        max_index = 0
 
-        for j in range(1, i + 1):
+        for location in range(1, fill_slot + 1):
 
-            if a_list[j] > a_list[pos_of_max]:
+            if a_list[location] > a_list[max_index]:
 
-                pos_of_max = j
-        temp = a_list[i]
-        a_list[i] = a_list[pos_of_max]
-        a_list[pos_of_max] = temp
+                max_index = location
 
-a_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-selection_sort_algorithm(a_list)
-print(a_list)
+        temp = a_list[fill_slot]
+        a_list[fill_slot] = a_list[max_index]
+        a_list[max_index] = temp
+
+num = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+selection_sort(num)
+print(num)
