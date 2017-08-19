@@ -17,3 +17,4 @@ def selection_sort(a_list):
 num = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 selection_sort(num)
 print(num)
+
