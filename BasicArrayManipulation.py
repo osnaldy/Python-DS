@@ -44,6 +44,16 @@ class ArrayClass:
 
         return index_with_value
 
+    def bubble_sort(self):
+
+        for i in range(0, self.array_size - 1):
+
+            for j in range(0, self.array_size - 1 - i):
+
+                if self.the_array[j] > self.the_array[j + 1]:
+
+                    self.swap_values(j, j+1)
+
     def swap_values(self, index_one, index_two):
 
         temp = self.the_array[index_one]
@@ -53,6 +63,9 @@ class ArrayClass:
 array = ArrayClass()
 
 array.generate_random_array()
+array.bubble_sort()
 array.print_array()
 print(array.get_value_at_index(1))
 print(array.linear_search(12))
+
+
