@@ -62,6 +62,12 @@ class ArrayClass:
 
             self.array_size += 1
 
+    def reverse_array(self):
+
+        for i in range(self.array_size):
+
+            return [self.the_array[_] for _ in range(self.array_size - 1, - 1, - 1)]
+
     def delete_index(self, index):
 
         if index < self.array_size:
@@ -99,3 +105,4 @@ array.bubble_sort()
 array.print_array()
 print(array.get_value_at_index(1))
 print(array.linear_search(12))
+print(array.reverse_array())
