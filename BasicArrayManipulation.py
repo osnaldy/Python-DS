@@ -78,6 +78,18 @@ class ArrayClass:
 
             self.array_size -= 1
 
+    def does_array_contain_value(self, value):
+
+        value_in_array = False
+
+        for i in range(self.array_size):
+
+            if self.the_array[i] == value:
+
+                value_in_array = True
+
+        return value_in_array
+
     def bubble_sort(self):
 
         for i in range(0, self.array_size - 1):
@@ -106,3 +118,4 @@ array.print_array()
 print(array.get_value_at_index(1))
 print(array.linear_search(12))
 print(array.reverse_array())
+print(array.does_array_contain_value(12))
