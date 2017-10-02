@@ -1,0 +1,33 @@
+import random
+
+
+class ArrayClass:
+
+    def __init__(self):
+
+        self.array_size = 10
+        self.the_array = [None] * self.array_size
+
+    def generate_random_array(self):
+
+        for values in range(self.array_size):
+
+            self.the_array[values] = random.randrange(10, 20)
+
+    def print_array(self):
+
+        print("----------")
+        for i in range(self.array_size):
+            print("| " + str(i) + " | " + str(self.the_array[i]) + " |" + "\n----------")
+
+    def get_value_at_index(self, index):
+
+        if index < self.array_size:
+            return self.the_array[index]
+        return 0
+
+array = ArrayClass()
+
+array.generate_random_array()
+array.print_array()
+print(array.get_value_at_index(3))
