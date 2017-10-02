@@ -6,7 +6,7 @@ class ArrayClass:
     def __init__(self):
 
         self.array_size = 10
-        self.the_array = [None] * self.array_size
+        self.the_array = [None] * 50
 
     def generate_random_array(self):
 
@@ -44,6 +44,14 @@ class ArrayClass:
 
         return index_with_value
 
+    def insert_value_at_the_end_of_array(self, value):
+
+        if self.array_size < 50:
+
+            self.the_array[self.array_size] = value
+
+            self.array_size += 1
+
     def bubble_sort(self):
 
         for i in range(0, self.array_size - 1):
@@ -63,9 +71,8 @@ class ArrayClass:
 array = ArrayClass()
 
 array.generate_random_array()
+array.insert_value_at_the_end_of_array(24)
 array.bubble_sort()
 array.print_array()
 print(array.get_value_at_index(1))
 print(array.linear_search(12))
-
-
