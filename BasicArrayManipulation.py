@@ -44,6 +44,16 @@ class ArrayClass:
 
         return index_with_value
 
+    def insert_value_at_given_index(self, index, value):
+
+        if self.array_size < 50:
+
+            self.the_array[self.array_size] = self.the_array[index]
+
+            self.the_array[index] = value
+
+            self.array_size += 1
+
     def insert_value_at_the_end_of_array(self, value):
 
         if self.array_size < 50:
@@ -81,6 +91,8 @@ class ArrayClass:
 array = ArrayClass()
 
 array.generate_random_array()
+array.insert_value_at_given_index(4, 21)
+array.insert_value_at_given_index(1, 223)
 array.insert_value_at_the_end_of_array(24)
 array.delete_index(3)
 array.bubble_sort()
