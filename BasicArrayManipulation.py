@@ -52,6 +52,16 @@ class ArrayClass:
 
             self.array_size += 1
 
+    def delete_index(self, index):
+
+        if index < self.array_size:
+
+            for i in range(index, self.array_size - 1):
+
+                self.the_array[i] = self.the_array[i + 1]
+
+            self.array_size -= 1
+
     def bubble_sort(self):
 
         for i in range(0, self.array_size - 1):
@@ -72,6 +82,7 @@ array = ArrayClass()
 
 array.generate_random_array()
 array.insert_value_at_the_end_of_array(24)
+array.delete_index(3)
 array.bubble_sort()
 array.print_array()
 print(array.get_value_at_index(1))
