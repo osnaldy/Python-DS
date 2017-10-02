@@ -44,6 +44,12 @@ class ArrayClass:
 
         return index_with_value
 
+    def swap_values(self, index_one, index_two):
+
+        temp = self.the_array[index_one]
+        self.the_array[index_one] = self.the_array[index_two]
+        self.the_array[index_two] = temp
+
 array = ArrayClass()
 
 array.generate_random_array()
