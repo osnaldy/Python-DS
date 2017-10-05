@@ -90,6 +90,29 @@ class ArrayClass:
 
         return value_in_array
 
+    def binary_search_algorithm(self, value):
+
+        first_index = 0
+        last_index = self.array_size - 1
+
+        while first_index <= last_index:
+
+            middle_index = (first_index + last_index) // 2
+
+            if self.the_array[middle_index] < value:
+
+                first_index = middle_index + 1
+
+            elif self.the_array[middle_index] > value:
+
+                last_index = middle_index - 1
+
+            else:
+
+                print("Found a match for " + str(value) + " at index " + str(middle_index))
+
+                first_index = last_index + 1
+
     def bubble_sort(self):
 
         for i in range(0, self.array_size - 1):
@@ -114,6 +137,7 @@ array.insert_value_at_given_index(1, 223)
 array.insert_value_at_the_end_of_array(24)
 array.delete_index(3)
 array.bubble_sort()
+array.binary_search_algorithm(11)
 array.print_array()
 print(array.get_value_at_index(1))
 print(array.linear_search(12))
