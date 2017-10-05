@@ -123,6 +123,20 @@ class ArrayClass:
 
                     self.swap_values(j, j+1)
 
+    def selection_sort(self):
+
+        for x in range(0, self.array_size):
+
+            minimum = x
+
+            for y in range(x, self.array_size):
+
+                if self.the_array[minimum] > self.the_array[y]:
+
+                    minimum = y
+
+            self.swap_values(x, minimum)
+
     def swap_values(self, index_one, index_two):
 
         temp = self.the_array[index_one]
@@ -136,7 +150,7 @@ array.insert_value_at_given_index(4, 21)
 array.insert_value_at_given_index(1, 223)
 array.insert_value_at_the_end_of_array(24)
 array.delete_index(3)
-array.bubble_sort()
+array.selection_sort()
 array.binary_search_algorithm(11)
 array.print_array()
 print(array.get_value_at_index(1))
