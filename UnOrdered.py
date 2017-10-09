@@ -58,6 +58,38 @@ class UnOrderedList:
             print(node.data, end=' ')
             node = node.next
 
+    # ---------------- Function to sum two linked list ----------------------
+
+    def sum_two_list(self, head1, head2):
+
+        current = Node(None)
+        carry = 0
+
+        while head1 is not None and head2 is not None:
+
+            if head1 is not None:
+
+                carry += head1.data
+                head1 = head1.next
+
+            if head2 is not None:
+
+                carry += head2.data
+                head2 = head2.next
+
+            current.next = Node(carry % 10)
+            current = current.next
+
+            carry //= 10
+
+            if self.head is None:
+                self.head = current
+
+            if carry > 0:
+
+                current.next = Node(carry)
+        return current.next
+
     # ---------------- Function to reverse an print linked list ----------------------
     def reverse_list(self):
 
