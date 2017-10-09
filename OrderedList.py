@@ -67,6 +67,34 @@ class OrderedList:
 
         return found
 
+    def sum_elements_of_two_linked_list(self, list1, list2):
+
+        list3 = Node(None)
+        carry = 0
+
+        while list1 is not None or list2 is not None:
+
+            if list1 is not None:
+
+                carry += list1.data
+                list1 = list1.next
+
+            if list2 is not None:
+
+                carry += list2.data
+                list2 = list2.next
+
+            list3.next = Node(carry % 10)
+            list3 = list3.next
+            carry //= 10
+
+            if self.head is None:
+                self.head = list3
+
+            if carry > 0:
+                list3.next = Node(carry)
+        return list3
+
     def add(self, item):
 
         current = self.head
@@ -99,6 +127,7 @@ class OrderedList:
 
             print (current.get_data(), "-->", end=' ')
             current = current.get_next()
+        print(current)
 
 myList = OrderedList()
 myList.add(23)
@@ -106,4 +135,15 @@ myList.add(77)
 myList.add(44)
 myList.add(5)
 
-print(myList.print_list())
+myList2 = OrderedList()
+myList2.add(23)
+myList2.add(77)
+myList2.add(44)
+myList2.add(5)
+
+myList3 = OrderedList()
+myList3.sum_elements_of_two_linked_list(myList.head, myList2.head)
+
+myList.print_list()
+myList2.print_list()
+myList3.print_list()
