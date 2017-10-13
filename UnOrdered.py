@@ -35,6 +35,27 @@ class UnOrderedList:
         # returns the numbers of Nodes found in the list
         return count
 
+    # ---------------- Function to delete duplicated nodes from a unsorted linked list ----------------------
+    def delete_duplicates_fromm_unsorted_linked_list(self):
+
+        current = self.head
+
+        while current is not None:
+
+            prev = current
+
+            while prev.next is not None:
+
+                if prev.next.data == current.data:
+
+                    prev.next = prev.next.next
+
+                else:
+
+                    prev = prev.next
+
+            current = current.next
+
     # ---------------- Function to search for a Node ----------------------
     def search(self, item):
 
