@@ -23,7 +23,7 @@ def convert_integer_to_string(n):
 
         if n != 0:
 
-            word += " " + ones[n % 10 - 1]
+            word += " " + ones[n - 1]
 
         else:
 
@@ -57,4 +57,4 @@ def convert_integer_to_string(n):
 
     return word
 
-print(convert_integer_to_string(895))
+print(convert_integer_to_string(23))
